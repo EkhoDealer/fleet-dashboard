@@ -17,8 +17,6 @@ After a major backend migration, the Operations team has reported a host of issu
 Your job is to investigate, find what's broken, and fix it.
 (Please note that investigation difficulty scales up from first issue -> last.)
 
-Issues 1-3 are the core of the exercise. Issues 4 and 5 are bonus if you have time left.
-
 ### Setup
 
 ```bash
