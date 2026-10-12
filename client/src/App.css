@@ -1,0 +1,443 @@
+/* ─── Reset & Base ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f5f6fa;
+  color: #2d3436;
+  line-height: 1.5;
+}
+
+/* ─── App Layout ─── */
+.app {
+  min-height: 100vh;
+}
+
+.app-header {
+  background: #1e272e;
+  color: #fff;
+  padding: 16px 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+main {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ─── Stage Summary Cards ─── */
+.stage-summary {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.stage-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-top: 3px solid #dfe6e9;
+}
+
+.stage-card-all { border-top-color: #636e72; }
+.stage-card-sale_processing { border-top-color: #6c5ce7; }
+.stage-card-fulfillment { border-top-color: #0984e3; }
+.stage-card-fulfilled { border-top-color: #00b894; }
+
+.stage-count {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.stage-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #636e72;
+  margin-top: 4px;
+}
+
+/* ─── Toolbar ─── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.stage-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stage-filter label {
+  font-size: 14px;
+  color: #636e72;
+}
+
+.stage-filter select {
+  padding: 8px 12px;
+  border: 1px solid #dfe6e9;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.btn-refresh {
+  padding: 8px 16px;
+  background: #0984e3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-refresh:hover {
+  background: #0874c9;
+}
+
+/* ─── Dashboard Content ─── */
+.dashboard-content {
+  display: flex;
+  gap: 20px;
+}
+
+.table-section {
+  flex: 1;
+  min-width: 0;
+}
+
+.detail-section {
+  width: 380px;
+  flex-shrink: 0;
+}
+
+/* ─── Vehicle Table ─── */
+.table-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: auto;
+  max-height: 70vh;
+}
+
+.vehicle-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.vehicle-table thead {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+}
+
+.vehicle-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #636e72;
+  border-bottom: 2px solid #dfe6e9;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.vehicle-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #f1f2f6;
+}
+
+.vehicle-table tbody tr {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.vehicle-table tbody tr:hover {
+  background: #f8f9ff;
+}
+
+.vehicle-table tbody tr.selected {
+  background: #e8f0fe;
+}
+
+.vin-cell {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+}
+
+.muted {
+  color: #b2bec3;
+}
+
+/* ─── Stage Badges ─── */
+.stage-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.stage-sale_processing { background: #a29bfe; color: #fff; }
+.stage-fulfillment { background: #74b9ff; color: #fff; }
+.stage-fulfilled { background: #55efc4; color: #2d3436; }
+
+/* ─── Detail Panel ─── */
+.detail-panel {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.detail-header h2 {
+  font-size: 18px;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #636e72;
+  cursor: pointer;
+}
+
+.detail-grid {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f2f6;
+}
+
+.detail-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #636e72;
+  font-weight: 600;
+}
+
+.detail-value {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-small {
+  padding: 2px 10px;
+  font-size: 12px;
+  background: #dfe6e9;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-small:hover {
+  background: #b2bec3;
+}
+
+/* ─── Stage Actions ─── */
+.stage-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+  padding: 12px;
+  background: #f8f9ff;
+  border-radius: 6px;
+}
+
+.action-label {
+  font-size: 13px;
+  color: #636e72;
+}
+
+.btn-stage {
+  padding: 6px 14px;
+  background: #00b894;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.btn-stage:hover {
+  background: #00a381;
+}
+
+.btn-stage:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ─── Stage History ─── */
+.stage-history {
+  margin-top: 16px;
+}
+
+.stage-history h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #636e72;
+}
+
+.stage-history ul {
+  list-style: none;
+}
+
+.stage-history li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 13px;
+  border-bottom: 1px solid #f1f2f6;
+}
+
+.history-stage {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.history-date {
+  color: #636e72;
+}
+
+/* ─── Modal ─── */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  width: 420px;
+  max-width: 90vw;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal h3 {
+  margin-bottom: 16px;
+}
+
+.vin-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border: 2px solid #dfe6e9;
+  border-radius: 6px;
+}
+
+.vin-input:focus {
+  outline: none;
+  border-color: #0984e3;
+}
+
+.form-error {
+  color: #d63031;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.btn-cancel {
+  padding: 8px 16px;
+  background: #dfe6e9;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary {
+  padding: 8px 16px;
+  background: #0984e3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ─── States ─── */
+.loading-spinner {
+  text-align: center;
+  padding: 48px;
+  color: #636e72;
+  font-size: 16px;
+}
+
+.error-banner {
+  background: #ffeef0;
+  color: #d63031;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px;
+  color: #b2bec3;
+  font-size: 16px;
+  background: #fff;
+  border-radius: 8px;
+}
